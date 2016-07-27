@@ -56,8 +56,9 @@ def get_tiles_in_geom(geom, z):
 
 
 def load_local_settings(settings):
-    local_settings_path = os.environ.get('LOCAL_SETTINGS_PATH',
-                                         settings['local_settings_path'])
+    local_settings_path = os.getenv('LOCAL_SETTINGS_PATH')
+    #local_settings_path = os.environ.get('LOCAL_SETTINGS_PATH',
+     #                                    settings['local_settings_path'])
     if os.path.exists(local_settings_path):
         config = ConfigParser.ConfigParser()
         config.read(local_settings_path)
@@ -81,7 +82,6 @@ def parse_geojson(input):
             len(collection.features) < 1:
         raise ValueError("GeoJSON file doesn't contain any feature.")
 # need translation
-
     shapely_features = filter(lambda x: x is not None,
                               map(parse_feature, collection.features))
 
