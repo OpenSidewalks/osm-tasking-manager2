@@ -4,7 +4,10 @@
 
 <%def  name="about_tasking_manager_intro()">
     <p>
-    ${_('OSM Tasking Manager is a mapping tool designed and built for the Humanitarian OSM Team collaborative mapping. The purpose of the tool is to divide up a mapping job into smaller tasks that can be completed rapidly. It shows which areas need to be mapped and which areas need the mapping validated.')}
+    ${_('This Tasking Manager is a custom deployment for coordinating the import of sidewalk data in Seattle.  More information abou tthis import is on the  <a target="_blank" href="http://wiki.openstreetmap.org/wiki/Proposed_features/sidewalk_schema">OpenStreetMap Wiki</a>, create an account, and then visit the LearnOSM tutorials on the <a target="_blank" href="https://github.com/OpenSidewalks/osmizer">GitHub</a>.')|n}
+    </p>
+    <p>
+    ${_('The OSM Tasking Manager is a mapping tool designed and built for the Humanitarian OSM Team collaborative mapping. The purpose of the tool is to divide up a mapping job into smaller tasks that can be completed rapidly. It shows which areas need to be mapped and which areas need the mapping validated.')}
     </p>
     <p>
     ${_('This approach facilitates the distribution of tasks to the various mappers in a context of emergency. It also permits control of the progress and the homogeneity of the work done (e.g. elements to cover, specific tags to use, etc.).')}
@@ -21,9 +24,9 @@
     ${_('Just jump over to <a target="_blank" href="http://www.openstreetmap.org">OpenStreetMap</a>, create an account, and then visit the LearnOSM tutorials on the <a target="_blank" href="http://learnosm.org/en/coordination/tasking-manager/">Tasking Manager</a> and the <a target="_blank" href="http://learnosm.org/en/beginner/id-editor">iD editor</a>. Alternatively check out the <a target="_blank" href="http://mapgive.state.gov">MapGive website</a> which also provides information on the Tasking Manager and mapping. Once you have read up on how to map, come back here to help map for people on the ground!')|n}
     </p>
     <hr>
-    <h4>${_('Questions About Tasks, Mapping or HOT?')}</h4>
+    <h4>${_('Questions About Tasks, Mapping or Open Sidewalks?')}</h4>
     <p>
-    ${_('If you have any questions about a project, a task or mapping in general please ask on our mailing list: <a href="https://lists.openstreetmap.org/listinfo/hot">HOT E-Mail List</a>.')|n}
+    ${_('If you have any questions about a project, a task or mapping in general please get in touch and send us an email: <a href="mailto:info@opensidewalks.com">info {at} opensidewalks.com</a>.')|n}
     </p>
     <p>
     ${_('Or visit us in our IRC Chat Channel, just select #hot from the pop down channel list: <a href="http://irc.openstreetmap.org/">OSM HOT IRC Channel #hot</a>.')|n}
@@ -34,9 +37,8 @@
 </%def>
 
 <%def  name="footer_contact_text()">
-  ${_('Email HOT at')} <a href='mailto:info@hotosm.org'>info@hotosm.org</a><br />
-  ${_('Follow HOT on')} <a href='http://www.twitter.com/hotosm'>Twitter</a><br />
-  ${_('Like HOT on')} <a href='http://facebook.com/hotosm'>Facebook</a>
+  ${_('Email Open Sidewalks  at')} <a href='mailto:info@opensidewalks.com'>info@opensidewalks.com</a><br />
+  ${_('Follow Open Sidewalks on')} <a href='https://twitter.com/OpenSidewalks'>Twitter</a><br />
 </%def>
 
 <%def name="analytics()">
@@ -117,7 +119,7 @@
       box-shadow: 0 0 3px rgba(0,0,0,.3);
     }
   </style>
-  <div class="corner-ribbon top-left sticky orange shadow ">
-    <a href="https://donate.hotosm.org" target="_blank">${_('Please donate!')}</a>
+ <div class="corner-ribbon top-left sticky orange shadow ">
+    <a href="https://donate.hotosm.org" target="_blank">${_('Meg is great!!')}</a>
   </div>
-</%def>
+</%def> 
