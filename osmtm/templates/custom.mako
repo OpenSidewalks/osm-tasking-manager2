@@ -119,7 +119,9 @@
       box-shadow: 0 0 3px rgba(0,0,0,.3);
     }
   </style>
+<!--
  <div class="corner-ribbon top-left sticky orange shadow ">
-    <a href="https://donate.hotosm.org" target="_blank">${_('Meg is great!!')}</a>
+    <a href="https://donate.hotosm.org" target="_blank">${_('Go Jess and Meg!')}</a>
   </div>
+-->
 </%def> 
