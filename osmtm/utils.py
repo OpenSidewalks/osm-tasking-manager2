@@ -56,8 +56,9 @@ def get_tiles_in_geom(geom, z):
 
 
 def load_local_settings(settings):
-    local_settings_path = os.environ.get('LOCAL_SETTINGS_PATH',
-                                         settings['local_settings_path'])
+    local_settings_path = os.environ.get('LOCAL_SETTINGS_PATH')
+    #local_settings_path = os.environ.get('LOCAL_SETTINGS_PATH',
+     #                                    settings['local_settings_path'])
     if os.path.exists(local_settings_path):
         config = ConfigParser.ConfigParser()
         config.read(local_settings_path)
