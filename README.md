@@ -22,7 +22,7 @@ First clone the git repository:
 
 Additional dependencies:
 * PostgreSQL (postgresql, postgresql-contrib)
-* postgis
+* postgis*
 * libpq-dev
 * libgeos-dev
 * python-dev (may be required)
