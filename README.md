@@ -20,8 +20,10 @@ First clone the git repository:
 
     git clone --recursive git://github.com/hotosm/osm-tasking-manager2.git
 
-Installing OSMTM in a Virtual Python environment is recommended.
+Additional dependencies:
+* PostgreSQL
 
+Installing OSMTM in a Virtual Python environment is recommended.
 To create a virtual Python environment:
 
     cd osm-tasking-manager2
