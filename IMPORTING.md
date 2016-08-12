@@ -1,6 +1,7 @@
 How to import
 =============
-
+* Borrowed from (LABuildings Import)[https://github.com/osmlab/labuildings]
+* Import Needs to be updated
 ## Getting started
 
 ### Creating an import account
