@@ -21,6 +21,7 @@ install:
 - createdb -O www-data osmtm_tests -U postgres
 - psql -d osmtm_tests -c "CREATE EXTENSION postgis;" -U postgres
 - env/bin/pip install flake8
+- env/bin/pip install --upgrade bleach
 
 script:
 - echo [app:main] >> local.test.ini
