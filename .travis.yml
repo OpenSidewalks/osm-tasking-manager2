@@ -15,7 +15,7 @@ before_install:
 install:
 - virtualenv env
 - env/bin/pip install --upgrade pip
-- wget https://bootstrap.pypa.io/ez_setup.py -O - | python
+- curl https://bootstrap.pypa.io/ez_setup.py -o - | python
 - env/bin/pip install -r requirements.txt
 - createuser www-data --no-superuser --no-createdb --no-createrole -U postgres
 - createdb -O www-data osmtm_tests -U postgres
