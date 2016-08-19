@@ -1,15 +1,16 @@
 How to import
 =============
 * Borrowed from (LABuildings Import)[https://github.com/osmlab/labuildings]
-* Import Needs to be updated
+* Import Instructions needs further updating
 
 ## Getting started
 
 ### Creating an import account
 
  * OSM best practices require that you [do not use your normal OSM account for the imports](http://wiki.openstreetmap.org/wiki/Import/Guidelines#Use_a_dedicated_user_account). Create a new account for this purpose. 
- Usually, it's your existing OSM username followed by `_imports` (e.g. `manings_imports or manings_labuilding)`.
- Post your import account username in this [ticket](http://github.com/osmlab/labuildings/issues/40).
+ Usually, it's your existing OSM username followed by `_imports` (e.g. `jess_imports or jess_seattlesidewalks)`.
+ Post your import account username in this ticket
+[//]: <> (http://github.com/osmlab/labuildings/issues/40)
 
 ### Getting familiar with JOSM
 
@@ -19,14 +20,12 @@ To contribute to this project, you need to use the JOSM editor.  Here are some r
 
 ### Check out a task on the tasking manager
 
- * Tasks will be available on **[http://labuildingsimport.com](http://labuildingsimport.com)**.
- * Priority: we are working on Los Angeles City first, which is broken down by census block groups. Each task performed is one block group within the city boundaries.
+ * Tasks will be available on **[http://tasks.opensidewalks.com](http://tasks.opensidewalks.com)**.
+ * Priority: we are working on the City of Seattle first, which is broken down by census block groups. Each task performed is one block group within the city boundaries.
  * Why? Because different parts of the county have different data problems to watch out for. If we all run into the same problems at the same time, it will be easier for us to help each other and improve the processing scripts and the import workflow.
 
 ## Import workflow
 
-### Download and install the auto-tools plugin
- * The good folks at Mapbox created a plugin to merge building shapes sliced by parcel boundaries. You can [find it here](https://github.com/mapbox/auto-tools). 
 
 ### Activating JOSM Remote Control
  * Open JOSM and activate JOSM Remote Control. In the JOSM menu, for Windows, select **Edit > Preferences...** or press `F12`. For Mac, select **JOSM > Preferences...** or press, `⌘,`.
@@ -38,16 +37,8 @@ To contribute to this project, you need to use the JOSM editor.  Here are some r
 ### Adding Bing imagery background
  * From the **Imagery** menu, select **Bing aerial imagery**.
 
-### Add L.A. County imagery (for rural areas)
- * Bing's imagery outside of major cities can be as old as 2010 (and unusable on the islands). Add L.A. County's aerial tileserver with an offset: From **Imagery** select **Imagery preferences** and click on **+ TMS** and add the following URL: 
-
- `http://cache.gis.lacounty.gov/cache/rest/services/LACounty_Cache/LACounty_Base/MapServer/tile/{zoom}/{y}/{x}`<br>
- 
- ![tile_server](https://cloud.githubusercontent.com/assets/695934/16742771/08ca96a4-475e-11e6-996a-4fff8232a5c9.gif)
-
 ### Selecting a task in the Tasking Manager
-
- * Choose which area you want to work on from **[http://labuildingsimport.com](http://labuildingsimport.com)** and click **Start Mapping**.
+ * Choose which area you want to work on from **[http://tasks.opensidewalks.com](http://tasks.opensidewalks.com)** and click **Start Mapping**.
  * Download current data in OSM by clicking **Edit in JOSM**.
  
 ![download_osm](https://cloud.githubusercontent.com/assets/353700/14101327/6f8b279a-f5b1-11e5-83ef-b28d00afca62.gif)
@@ -55,25 +46,29 @@ To contribute to this project, you need to use the JOSM editor.  Here are some r
  * This will load the existing data from OpenStreetMap (`Data Layer 1`) and another background layer for the boundaries of the task (`Tasking Manager - #2`).  You will work only within the task boundary.
  
  * Get the `.osm` file you will import by clicking the link in the **Extra Instructions**.  This will download a new layer in JOSM.
-   At least two layers should be in JOSM: one with the imported data (`buildings-addresses####.osm`), one with current OSM data (`Data Layer 1`).
+   At least two layers should be in JOSM: one with the imported data (`sidwalks-####.osm`), one with current OSM data (`Data Layer 1`).
 
  ![download_import](https://cloud.githubusercontent.com/assets/353700/14101326/6f64d14e-f5b1-11e5-9748-8c56995a256d.gif)
 
 ### Reviewing the data before uploading
 
+ * Using the aerial imagery check that crossings are accurate.
+ * Ensure new geometries are not running into existing features.
+ * Make sure sidewalks connect to crossings.
+ * Connect way endpoints to adjacent data if it exists.
  * Review both data layers for possible conflicts.
  * Examine tags in both data sets to see if there are any conflicts.
  * If there are any problems you don't know how to deal with, do not proceed. Instead, flag the `.osm` file for a more advanced user to look at. 
  (Use github [issues](http://github.com/osmlab/labuildings/issues) to flag concerns, and/or create 
  [OSM notes](http://wiki.openstreetmap.org/wiki/Notes)). Then unlock your task on the tasking manager and pick a new area to work on.
 
-* Preserve the work of previous mappers wherever possible.  If existing buildings in OSM are of higher quality:
+* Preserve the work of previous mappers wherever possible.  If existing sidewalks in OSM are of higher quality:
   * Copy the tags from the import layer version.
-  * Delete the building from the import layer.
+  * Delete the sidewalks from the import layer.
   * Switch to the OSM layer.
-  * Select the building, paste the tags.
+  * Select the sidewalk and paste the tags.
 
-* If the imported data are of higher quality, select both buildings and use the **Replace geometry** tool. 
+* If the imported data is of higher quality, select both sidewalks and use the **Replace geometry** tool. 
  
  ![replace](https://cloud.githubusercontent.com/assets/353700/12942518/ddba87a4-d001-11e5-9441-2561f67b45bc.gif) 
 
@@ -89,7 +84,7 @@ To contribute to this project, you need to use the JOSM editor.  Here are some r
 * Right-click the layers and click Merge.
 
 ![screen shot 2016-04-02 at 3 51 12 pm](https://cloud.githubusercontent.com/assets/3673236/14229616/ad4ebafe-f8ec-11e5-9ae0-444dcf540264.png)
-* Merge onto the `buildings-...osm` layer.
+* Merge onto the `sidewalks-...osm` layer.
 
 ![screen shot 2016-04-02 at 3 51 21 pm](https://cloud.githubusercontent.com/assets/3673236/14229618/ad65cf96-f8ec-11e5-8d72-a6b661adedbd.png) 
 * Click the Upload button, the green up arrow button.
@@ -99,8 +94,8 @@ To contribute to this project, you need to use the JOSM editor.  Here are some r
 
 ![screen shot 2016-04-02 at 3 53 11 pm](https://cloud.githubusercontent.com/assets/3673236/14229619/ad72b6c0-f8ec-11e5-97b6-66b43f1c2937.png)
 
-* Use the **changeset comment**: `LA County Building Import #labuildings https://wiki.openstreetmap.org/wiki/Los_angeles,_California/Buildings_Import ` 
- and **source**: `LA County GIS, http://egis3.lacounty.gov/dataportal/`.
+* Use the **changeset comment**: `Seattle Sidewalk Import #seattlesidewalks http://wiki.openstreetmap.org/wiki/Seattle,_Washington/Sidewalk_Import` 
+ and **source**: `City of Seattle, https://data.seattle.gov/`.
 
 ![screen shot 2016-04-02 at 3 53 17 pm](https://cloud.githubusercontent.com/assets/3673236/14229620/ad73128c-f8ec-11e5-9e2f-44d272bd6403.png)
 
@@ -113,22 +108,6 @@ If you see an Authorization window asking you to log in to OpenStreetMap, log in
 ### Validate the import with your eyes before uploading!
 
  * Run the [JOSM validator](http://wiki.openstreetmap.org/wiki/JOSM/Validator). Check for any errors it detects.
- * Check for small building parts that should be joined to the main building. We've already found a few examples of these in the data (see [issue #19](https://github.com/osmlab/labuildings/issues/19)), so make sure you keep an eye out for these.  To join small parts, select both polygons and select **Tools > Join overlapping Area**.
- 
- ![screen shot 2016-04-04 at 2 38 36 pm](https://cloud.githubusercontent.com/assets/695934/14264162/74ab59f4-fa73-11e5-8c4e-896c7fa2c2e4.png)
-
-If it's a small sliver, it makes sense that the "proper" data is on the larger object. Delete all the tags on the sliver and join the two objects.
-
-If it's larger, like a strip mall split into pieces, then do:
-
-- `lacounty:ain` -> ALL
-- `lacount:bld_id` -> ALL
-- `start_date` -> None if multiple or the one option if there's only one
-- `height` -> largest number
-- `ele` -> largest number 
-- `building:units` -> none if different
-
-![screen shot 2016-04-04 at 2 38 44 pm](https://cloud.githubusercontent.com/assets/695934/14264157/6c9f23ee-fa73-11e5-8744-e49d7e179003.png)
 
  * Inspect everything else with a critical eye! Don't trust that the validator or FIXME tags will catch everything. There may be other bugs that only you can detect. Use your human smarts!
  
@@ -138,23 +117,17 @@ If it's larger, like a strip mall split into pieces, then do:
  
 ### How to ground-truth the data
  * Up-to-date aerial imagery... try several sources.
- * See if the street is on [Mapillary](http://www.mapillary.com/map/search/33.7585334163995/34.026616549869615/-118.72937986848933/-117.82764503425584).
+ * See if the street is on [Mapillary](http://www.mapillary.com/).
  * Go out and check it out yourself! Take a field trip!
  * **DO NOT USE GOOGLE MAPS OR GOOGLE STREET VIEW**.
 
-### Identifying new buildings with imported and existing data
-* The imagery from Bing was mostly from Los Angeles Region Image Acquisition Consortium (LARIAC).  This is the same imagery used as a reference for tracing the imported data.   In some areas, the imagery is more updated than the imported data and we can use it to identify newer buildings not found in the imported and existing data.
-* Newer building should be identified and flagged. Tag the building with `fixme` and add a note: `Appears in satelite imagery.`
-![screen shot 2016-04-02 at 3 19 31 pm](https://cloud.githubusercontent.com/assets/3673236/14229396/ab9f392c-f8e7-11e5-80ca-635b97332bd8.png)
-* Likewise, buildings maybe demolished and does not exist anymore, delete them.
- 
+
 ## Communicate communicate communicate!
 
 ### How to ask for help
 
- * Create [issues](http://github.com/osmlab/labuildings/issues) on this github repo.
- * Ask questions on the [gitter channel](http://gitter.im/osmlab/labuildings).
- * Contact [@mappingmashups](http://twitter.com/mappingmashups), [@theworksla](https://twitter.com/theworksla),  [@gaufre](https://twitter.com/gaufre),  [@maningsambale](http://twitter.com/maningsambale).
+ * Create [issues](https://github.com/OpenSidewalks/sidewalk-imports/issues) on this github repo.
+ * Contact [info@opensidewalks.com](info@opensidewalks.com)
 
 ### How to share your progress
 
@@ -163,5 +136,5 @@ If it's larger, like a strip mall split into pieces, then do:
 ### How to communicate with other mappers
 
  * JOSM [GeoChat](http://wiki.openstreetmap.org/wiki/JOSM/Plugins/GeoChat) feature.
- * Twitter hashtag `#labuildings`.
+ * Twitter hashtag `#seattlesidewalks`.
  * Befriend other mappers on openstreetmap.com.
